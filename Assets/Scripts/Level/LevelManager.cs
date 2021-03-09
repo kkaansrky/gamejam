@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
 public class LevelManager : MonoBehaviour
 {
@@ -14,6 +16,7 @@ public class LevelManager : MonoBehaviour
 
     int currentLevelIndex = 0;
 
+    
     private void Awake()
     {
         if (instance == null)
@@ -27,8 +30,10 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-    public bool HandleCreateNextLevel()
+     public bool HandleCreateNextLevel()
     {
+       
+
         ++currentLevelIndex;
 
         if (levelInfoAsset.levelInfos.Count >= currentLevelIndex)
@@ -36,11 +41,12 @@ public class LevelManager : MonoBehaviour
             CreateNextLevel();
             return true;
         }
+
         return false;
     }
 
     void CreateNextLevel()
     {
-        GroundManager.Instance.SpawnPlatforms();
+
     }
 }

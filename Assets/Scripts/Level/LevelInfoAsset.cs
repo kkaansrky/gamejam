@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "LevelInfoAsset", menuName = "Level/Level Info Asset")]
@@ -12,5 +13,5 @@ public class LevelInfoAsset : ScriptableObject
 public struct LevelInfo
 {
     public GameObject baseObj;
-
+    
 }
