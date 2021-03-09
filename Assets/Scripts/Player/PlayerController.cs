@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.Events;
+﻿using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
@@ -9,14 +6,6 @@ public class PlayerController : MonoBehaviour
     private float turnSpeed = 20f;
     private float horizontalInput;
     private float forwardInput;
-   
-    
-
-    void Awake()
-    {
-        
-    }
-
     private void Update()
     {
         horizontalInput = Input.GetAxis("Horizontal");
@@ -26,5 +15,5 @@ public class PlayerController : MonoBehaviour
         transform.Rotate(Vector3.up, Time.deltaTime * turnSpeed * horizontalInput);
     }
 
-    
+
 }
