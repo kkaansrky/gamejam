@@ -1,8 +1,10 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
-public class LevelManager : MonoBehaviour
+public class SalihLevelManager : MonoBehaviour
 {
-    public static LevelManager Instance => instance;
+    public static SalihLevelManager Instance => instance;
 
     public System.Action LevelCompleted;
 
@@ -10,7 +12,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] LevelInfoAsset levelInfoAsset;
 
 
-    private static LevelManager instance;
+    private static SalihLevelManager instance;
 
     int currentLevelIndex = 0;
 
@@ -41,6 +43,6 @@ public class LevelManager : MonoBehaviour
 
     void CreateNextLevel()
     {
-        GroundManager.Instance.SpawnPlatforms();
+        SalihGroundManager.Instance.SpawnPlatforms();
     }
 }
