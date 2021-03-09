@@ -5,34 +5,26 @@ using UnityEngine.Events;
 
 public class PlayerController : MonoBehaviour
 {
-    public float speed = 1f;
-
-    PlayerInputController inputController;
-    PlayerMovementController movementController;
+    private float speed = 5f;
+    private float turnSpeed = 20f;
+    private float horizontalInput;
+    private float forwardInput;
+   
     
 
     void Awake()
     {
-        inputController = GetComponent<PlayerInputController>();
-        movementController = GetComponent<PlayerMovementController>();
-     
-
-        //inputController.OnSwiped += OnSwiped;  // Action<SwipeType> kullanıyor.
-        inputController.OnSwiped.AddListener(OnSwiped); // UnityEvent<SwipeType> kullanıyor. 
+        
     }
 
     private void Update()
     {
-        
+        horizontalInput = Input.GetAxis("Horizontal");
+        forwardInput = Input.GetAxis("Vertical");
+
+        transform.Translate(Vector3.forward * Time.deltaTime * speed * forwardInput);
+        transform.Rotate(Vector3.up, Time.deltaTime * turnSpeed * horizontalInput);
     }
 
-    void OnSwiped(SwipeType swipeType)
-    {
-        movementController.OnSwiped(swipeType);
-
-        if (swipeType == SwipeType.Down)
-        {
-            
-        }
-    }
+    
 }
