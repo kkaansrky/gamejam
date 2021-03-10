@@ -11,7 +11,7 @@ public class SalihGroundManager : MonoBehaviour
     private float zOffSet;
 
     [Space, SerializeField]
-    private GameObject platform;
+    private List<GameObject> Platforms;
 
     [Space, SerializeField]
     private Transform environment;
@@ -39,13 +39,21 @@ public class SalihGroundManager : MonoBehaviour
 
         for (int i = 1; i <= platformCount; i++)
         {
+            int randomPlatformIndex = RandomIndex();
             GameObject newPlatform =
-                Instantiate(platform, targetPos, Quaternion.identity) as GameObject;
+                Instantiate(Platforms[randomPlatformIndex], targetPos, Quaternion.identity) as GameObject;
             newPlatform.name = "P" + i;
             newPlatform.transform.SetParent(environment);
             targetPos = new Vector3(targetPos.x, targetPos.y, targetPos.z + zOffSet);
             returnList.Add(newPlatform);
         }
         return returnList;
+    }
+
+    public int RandomIndex()
+    {
+        int i = Random.Range(0, Platforms.Count);
+
+        return i;
     }
 }

@@ -11,7 +11,7 @@ public class GroundManager : MonoBehaviour
     private float zOffSet;
 
     [Space, SerializeField]
-    private GameObject platform;
+    private List<GameObject> Platforms;
 
     [Space, SerializeField]
     private Transform environment;
@@ -39,12 +39,21 @@ public class GroundManager : MonoBehaviour
 
         for (int i = 1; i <= platformCount; i++)
         {
-            GameObject newPlatform = 
-                Instantiate(platform, targetPos, Quaternion.identity) as GameObject;
-            newPlatform.name = "P"+i;
+            int randomPlatformIndex = RandomIndex();
+            GameObject newPlatform =
+                Instantiate(Platforms[randomPlatformIndex], targetPos, Quaternion.identity) as GameObject;
+            newPlatform.name = "P" + i;
             newPlatform.transform.SetParent(environment);
             targetPos = new Vector3(targetPos.x, targetPos.y, targetPos.z + zOffSet);
+            returnList.Add(newPlatform);
         }
         return returnList;
+    }
+
+    public int RandomIndex()
+    {
+        int i = Random.Range(0, Platforms.Count);
+
+        return i;
     }
 }

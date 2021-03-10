@@ -294,20 +294,20 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 1.3
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 0
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 1
+    m_Strength: 0.5
     m_Bias: 0.05
     m_NormalBias: 0.4
-    m_NearPlane: 0.2
+    m_NearPlane: 0.1
     m_CullingMatrixOverride:
       e00: 1
       e01: 0
@@ -334,7 +334,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -343,7 +343,7 @@ Light:
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
-  m_ShadowAngle: 0
+  m_ShadowAngle: 44.6
 --- !u!4 &437445187
 Transform:
   m_ObjectHideFlags: 0
@@ -432,7 +432,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platformCount: 3
   zOffSet: 82.5
-  platform: {fileID: 442367596037366952, guid: 8480449196bf3af4692096273c24bcf2, type: 3}
+  Platforms:
+  - {fileID: 442367596037366952, guid: eb7f702a83c79f34bb9e65442679c26d, type: 3}
+  - {fileID: 442367596037366952, guid: 8480449196bf3af4692096273c24bcf2, type: 3}
   environment: {fileID: 216573449}
 --- !u!4 &821828561
 Transform:
@@ -525,6 +527,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 095b10c186ec033489155560189b85ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AmbientSpeed: 100
+  SwipeSpeed: 0.5
 --- !u!54 &1877284039
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -609,7 +613,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1877284037}
   m_LocalRotation: {x: 0.000024283057, y: 0.0037703658, z: -0.0064403336, w: 0.99997216}
-  m_LocalPosition: {x: 0, y: 5, z: 0}
+  m_LocalPosition: {x: 4.16, y: 5, z: 0}
   m_LocalScale: {x: 3.9854457, y: 0.47196674, z: 1}
   m_Children:
   - {fileID: 217904318}

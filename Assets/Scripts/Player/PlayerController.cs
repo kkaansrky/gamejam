@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     private float _horizontalInput;   
     private Rigidbody _planeRigidbody;
     #endregion
+
     #region Main Methods
     void Awake()
     {
@@ -27,11 +28,19 @@ public class PlayerController : MonoBehaviour
 
         if (transform.position.x < _xRangeLeft)
         {
-            transform.position = new Vector3(_xRangeLeft, transform.position.y, transform.position.z);
+            transform.position = new Vector3(
+                _xRangeLeft, 
+                transform.position.y, 
+                transform.position.z
+                );
         }
         else if (transform.position.x > _xRangeRight)
         {
-            transform.position = new Vector3(_xRangeRight, transform.position.y, transform.position.z);
+            transform.position = new Vector3(
+                _xRangeRight, 
+                transform.position.y, 
+                transform.position.z
+                );
         }
  
         _horizontalInput = Swipe();
@@ -39,10 +48,12 @@ public class PlayerController : MonoBehaviour
         transform.Translate(Vector3.right * Time.deltaTime * _speed * _horizontalInput);
 
         _planeRigidbody.velocity = new Vector3(_horizontalInput, 0, 0);
-        _planeRigidbody.rotation = Quaternion.Euler(0, 0, _planeRigidbody.velocity.x * -_tilt);
+        _planeRigidbody.rotation = 
+            Quaternion.Euler(0, 0, _planeRigidbody.velocity.x * -_tilt);
         //transform.Rotate(Vector3.up, Time.deltaTime * 0.3f * _horizontalInput);
          }
     #endregion
+
     #region Custom Methods
     //inside class
     Vector2 firstPressPos;
@@ -65,7 +76,10 @@ public class PlayerController : MonoBehaviour
                 secondPressPos = new Vector2(t.position.x, t.position.y);
 
                 //create vector from the two points
-                currentSwipe = new Vector3(secondPressPos.x - firstPressPos.x, secondPressPos.y - firstPressPos.y);
+                currentSwipe = new Vector3(
+                    secondPressPos.x - firstPressPos.x, 
+                    secondPressPos.y - firstPressPos.y
+                    );
 
                 //normalize the 2d vector
                 currentSwipe.Normalize();
