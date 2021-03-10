@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     public float AmbientSpeed = 100.0f;
     public float SwipeSpeed = 0.5f;
     private float _xRangeLeft = -2.6f;
-    private float _xRangeRight = 4.6f;
+    private float _xRangeRight = 2.6f;
     private float _tilt = 3;
     private float _horizontalInput;   
     private Rigidbody _planeRigidbody;
