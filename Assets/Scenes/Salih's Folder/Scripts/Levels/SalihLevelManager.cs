@@ -16,6 +16,8 @@ public class SalihLevelManager : MonoBehaviour
 
     int currentLevelIndex = 0;
 
+    List<GameObject> groundsList = new List<GameObject>();
+
     private void Awake()
     {
         if (instance == null)
@@ -31,6 +33,14 @@ public class SalihLevelManager : MonoBehaviour
 
     public bool HandleCreateNextLevel()
     {
+        if (groundsList.Count > 0)
+        {
+            for (int i = 0; i < groundsList.Count; i++)
+            {
+                Destroy(groundsList[i]);     
+            }
+        }
+
         ++currentLevelIndex;
 
         if (levelInfoAsset.levelInfos.Count >= currentLevelIndex)
@@ -43,6 +53,6 @@ public class SalihLevelManager : MonoBehaviour
 
     void CreateNextLevel()
     {
-        SalihGroundManager.Instance.SpawnPlatforms();
+        groundsList = SalihGroundManager.Instance.SpawnPlatforms();
     }
 }

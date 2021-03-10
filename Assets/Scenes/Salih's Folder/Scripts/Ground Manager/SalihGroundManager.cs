@@ -44,6 +44,7 @@ public class SalihGroundManager : MonoBehaviour
             newPlatform.name = "P" + i;
             newPlatform.transform.SetParent(environment);
             targetPos = new Vector3(targetPos.x, targetPos.y, targetPos.z + zOffSet);
+            returnList.Add(newPlatform);
         }
         return returnList;
     }
