@@ -45,11 +45,10 @@ public class PlayerController : MonoBehaviour
  
         _horizontalInput = Swipe();
 
-        transform.Translate(Vector3.right * Time.deltaTime * _speed * _horizontalInput);
+        transform.Translate((Vector3.right*0.5f) * Time.deltaTime * _speed * _horizontalInput);
 
         _planeRigidbody.velocity = new Vector3(_horizontalInput, 0, 0);
-        _planeRigidbody.rotation = 
-        Quaternion.Euler(0, 0, _planeRigidbody.velocity.x * -_tilt);
+        _planeRigidbody.rotation = Quaternion.Euler(0, 0, _planeRigidbody.velocity.x * -_tilt);
         //transform.Rotate(Vector3.up, Time.deltaTime * 0.3f * _horizontalInput);
          }
     #endregion
