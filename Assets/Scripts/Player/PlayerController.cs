@@ -49,7 +49,7 @@ public class PlayerController : MonoBehaviour
 
         _planeRigidbody.velocity = new Vector3(_horizontalInput, 0, 0);
         _planeRigidbody.rotation = 
-            Quaternion.Euler(0, 0, _planeRigidbody.velocity.x * -_tilt);
+        Quaternion.Euler(0, 0, _planeRigidbody.velocity.x * -_tilt);
         //transform.Rotate(Vector3.up, Time.deltaTime * 0.3f * _horizontalInput);
          }
     #endregion
