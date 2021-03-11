@@ -4,43 +4,38 @@ using UnityEngine;
 
 public class PlaneControl : MonoBehaviour
 {
-    Rigidbody rb;
-    float horizontal;
-    float vertical;
-    Vector3 vec;
-    public float speed;
-    private float deltaX, deltaY;
-    public float egim;
-    void Start()
-    {
-        rb = GetComponent<Rigidbody>();
-            
+    private Touch touch;
+    private float speed;
+
+    public static float _z;
+
+    void Start(){
+        speed=0.01f;
+
     }
 
-    
-    void Update()
-    {
-        if (Input.touchCount > 0)
-        {
-            Touch touch = Input.GetTouch(0);
+    void FixedUpdate(){
+        
+        _z=transform.position.z;
+        transform.Translate(Vector3.forward*5*Time.deltaTime);
 
-            Vector2 touchPos = Camera.main.ScreenToWorldPoint(touch.position);
-
-            switch (touch.phase)
-            {
-                case TouchPhase.Began:
-                    deltaX = touchPos.x - transform.position.x;
-                    deltaY = touchPos.y - transform.position.y;
-                    break;
-
-                case TouchPhase.Moved:
-                    rb.MovePosition(new Vector3(touchPos.x - deltaX, 0, 0));
-                    break;
-                case TouchPhase.Ended:
-                    rb.velocity = Vector2.zero;
-                    break;
+        if(Input.touchCount > 0){
+            touch = Input.GetTouch(0);
+            if(touch.phase == TouchPhase.Moved){
+                if(touch.deltaPosition.x >0){
+                    
+                }
+                transform.position = new Vector3(Mathf.Clamp((transform.position.x+touch.deltaPosition.x*speed),-2.5f,2.5f),4,transform.position.z);
             }
         }
+        
 
     }
+
+
+    public static float GetZ()
+    {
+        return PlaneControl._z;
+    }
+    
 }
