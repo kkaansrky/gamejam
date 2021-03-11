@@ -87,7 +87,7 @@ public class PlayerController : MonoBehaviour
                 if (currentSwipe.x < 0 && (currentSwipe.y > -0.5f || currentSwipe.y < 0.5f))
                 {
                     Debug.Log("left");
-                    gameObject.GetComponent<Animator>().SetTrigger("left");
+                    //gameObject.GetComponent<Animator>().SetTrigger("left");
                     _horizontalInput = -SwipeSpeed;
                     return _horizontalInput;
                 }
@@ -95,7 +95,7 @@ public class PlayerController : MonoBehaviour
                 if (currentSwipe.x > 0 && (currentSwipe.y > -0.5f || currentSwipe.y < 0.5f))
                 {
                     Debug.Log("right");
-                    gameObject.GetComponent<Animator>().SetTrigger("right");
+                    //gameObject.GetComponent<Animator>().SetTrigger("right");
                     _horizontalInput = SwipeSpeed;
                     return _horizontalInput;
                 }
