@@ -53,6 +53,6 @@ public class SalihLevelManager : MonoBehaviour
 
     void CreateNextLevel()
     {
-        groundsList = SalihGroundManager.Instance.SpawnPlatforms();
+        SalihGroundManager.Instance.SpawnPlatforms();
     }
 }

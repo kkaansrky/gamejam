@@ -19,6 +19,11 @@ public class SalihGroundManager : MonoBehaviour
     private static SalihGroundManager instance;
     public static SalihGroundManager Instance => instance;
 
+    Vector3 targetPos = Vector3.zero;
+
+    //[Space, SerializeField]
+    //private GameObject endPlatform;
+
     private void Awake()
     {
         if (instance == null)
@@ -34,26 +39,41 @@ public class SalihGroundManager : MonoBehaviour
 
     public List<GameObject> SpawnPlatforms()
     {
-        Vector3 targetPos = Vector3.zero;
+        int lastRandom = -1;
         List<GameObject> returnList = new List<GameObject>();
 
-        for (int i = 1; i <= platformCount; i++)
+        for (int i = 1; i <= platformCount-1; i++)
         {
             int randomPlatformIndex = RandomIndex();
-            GameObject newPlatform =
-                Instantiate(Platforms[randomPlatformIndex], targetPos, Quaternion.identity) as GameObject;
-            newPlatform.name = "P" + i;
-            newPlatform.transform.SetParent(environment);
-            targetPos = new Vector3(targetPos.x, targetPos.y, targetPos.z + zOffSet);
-            returnList.Add(newPlatform);
+            if(randomPlatformIndex != lastRandom){
+                GameObject temp =SpawnPlatforms(randomPlatformIndex);
+                returnList.Add(temp);
+                lastRandom=randomPlatformIndex;
+            }else{
+                platformCount++;
+            }
+            
         }
+        //son platform oluşturma
+
+        GameObject temp2 = SpawnPlatforms(2);
+        returnList.Add(temp2);
+
         return returnList;
     }
 
     public int RandomIndex()
     {
-        int i = Random.Range(0, Platforms.Count);
+        int i = Random.Range(0, Platforms.Count-1);
 
         return i;
+    }
+
+    public GameObject SpawnPlatforms(int index){
+        GameObject endP = Instantiate(Platforms[index] ,targetPos, Quaternion.identity) as GameObject;
+        endP.transform.SetParent(environment);
+        targetPos = new Vector3(targetPos.x, targetPos.y, targetPos.z + zOffSet);
+
+        return endP;
     }
 }
