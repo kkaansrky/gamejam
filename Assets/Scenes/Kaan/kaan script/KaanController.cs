@@ -7,22 +7,28 @@ public class KaanController : MonoBehaviour
     PlayerStats playerStats;
     Animator animator;
     private void OnTriggerEnter(Collider other){
-        Debug.Log("girdi");
-        playerStats = other.GetComponent<PlayerStats>();
 
-        animator = other.GetComponent<Animator>();
-        animator.SetTrigger("down");
+        if (other.CompareTag("Pool"))
+        {
+            Debug.Log("girdi");
+            playerStats = gameObject.GetComponent<PlayerStats>();
+
+            animator = gameObject.GetComponent<Animator>();
+            animator.SetTrigger("down");
+        }
     }
     private void OnTriggerStay(Collider other){
-        Debug.Log("stay");
-        playerStats.addWater();
+        if (other.CompareTag("Pool"))
+        {
+            Debug.Log("stay");
+            playerStats.addWater();
+        }
     }
     private void OnTriggerExit(Collider other){
-        Debug.Log("çıktı");
-       
-        animator.SetTrigger("up");
-        
-
+        if (other.CompareTag("Pool"))
+        {
+            Debug.Log("çıktı");
+            animator.SetTrigger("up");
+        }
     }
-    
 }

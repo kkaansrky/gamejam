@@ -518,20 +518,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8210b1c41ba15745a37ae9ffb9b90b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &248623302
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 248623295}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d983474640a576e42a8a3f5aada30ef0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  debugWithArrowKeys: 1
-  swipeState: 0
 --- !u!114 &248623303
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -544,12 +530,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6477c4f8f6f1e64cb11ceb5f8bf4d70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveDuration: 0
-  xAxisPos: 0
-  minYOrdinate: 0
-  maxYOrdinate: 0
-  HorizontalRotation: 0
-  VerticalRotation: 0
+  moveDuration: 0.5
+  xAxisPos: 2.5
+  minYOrdinate: 3
+  maxYOrdinate: 5
+  HorizontalRotation: 30
+  VerticalRotation: 20
 --- !u!1001 &386135658
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1569,3 +1555,48 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0.006, y: 0.432, z: -0.73800004}
+--- !u!1 &2103797347
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2103797349}
+  - component: {fileID: 2103797348}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2103797348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2103797347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d983474640a576e42a8a3f5aada30ef0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debugWithArrowKeys: 1
+  swipeState: 0
+--- !u!4 &2103797349
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2103797347}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.2343893, y: -1.2848301, z: 19.830885}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

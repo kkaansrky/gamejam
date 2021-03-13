@@ -4,7 +4,7 @@ using UnityEngine;
 public class SalihPlayerController : MonoBehaviour
 {
     //KAAAN
-    /*public static float _z;
+    public static float _z;
 
 
      void FixedUpdate(){
@@ -15,7 +15,7 @@ public class SalihPlayerController : MonoBehaviour
     public static float GetZ()
     {
         return SalihPlayerController._z;
-    }*/
+    }
     //KAAAN
 
     #region Event System
@@ -59,6 +59,7 @@ public class SalihPlayerController : MonoBehaviour
             Mathf.Clamp(xAxisPos, -xAxisPos, xAxisPos), 
             transform.position.y, 
             transform.position.z);
+        transform.Translate(Vector3.forward*Time.deltaTime*6);
 
         Vector3 newRot = new Vector3(
             transform.rotation.x,

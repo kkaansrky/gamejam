@@ -105,9 +105,9 @@ GameObject:
   - component: {fileID: 314553671210718284}
   - component: {fileID: 7203669102786744942}
   - component: {fileID: 4007464551576600653}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Water Spot 3
-  m_TagString: Untagged
+  m_TagString: Pool
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -121,7 +121,7 @@ Transform:
   m_GameObject: {fileID: 401188404790265183}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.5, y: 0.2, z: 65.5}
-  m_LocalScale: {x: 5, y: 0.1, z: 20}
+  m_LocalScale: {x: 5, y: 0.1, z: 10}
   m_Children:
   - {fileID: 3456527704872014840}
   - {fileID: 7112338708113730015}
@@ -186,11 +186,11 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 401188404790265183}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 72.74466, z: 1}
+  m_Center: {x: 0, y: 35.872326, z: 0}
 --- !u!1 &442367596037366952
 GameObject:
   m_ObjectHideFlags: 0
@@ -237,7 +237,7 @@ GameObject:
   - component: {fileID: 9101491856595941559}
   - component: {fileID: 9050669942563493331}
   - component: {fileID: 3530521337900629915}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Spot Side (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -579,7 +579,7 @@ GameObject:
   - component: {fileID: 228753613337418284}
   - component: {fileID: 5383173279363709131}
   - component: {fileID: 7927108066305726495}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Spot Side (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -672,7 +672,7 @@ GameObject:
   - component: {fileID: 3003663737921960927}
   - component: {fileID: 4168533755848235045}
   - component: {fileID: 2824561487680572687}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Spot Side (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1044,7 +1044,7 @@ GameObject:
   - component: {fileID: 5732260806007174752}
   - component: {fileID: 7100275974410346075}
   - component: {fileID: 1906305278704642837}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Spot Side
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1230,7 +1230,6 @@ GameObject:
   - component: {fileID: 4763113013761957436}
   - component: {fileID: 5209653775031109301}
   - component: {fileID: 3045772364064213273}
-  - component: {fileID: 1023756991763992278}
   m_Layer: 9
   m_Name: Water Spot 2
   m_TagString: Pool
@@ -1247,7 +1246,7 @@ Transform:
   m_GameObject: {fileID: 6930388516018823052}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.5, y: 0.2, z: 40}
-  m_LocalScale: {x: 5, y: 0.1, z: 20}
+  m_LocalScale: {x: 5, y: 0.1, z: 10}
   m_Children:
   - {fileID: 8524227626711632653}
   - {fileID: 8185273607368349930}
@@ -1317,18 +1316,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 87.2757, z: 1}
   m_Center: {x: 0, y: 43.13785, z: 0}
---- !u!114 &1023756991763992278
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6930388516018823052}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5494ee8b71499ed42a59e125976a9674, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &8109767383146829262
 GameObject:
   m_ObjectHideFlags: 0
@@ -1434,7 +1421,6 @@ GameObject:
   - component: {fileID: 8747029385624655068}
   - component: {fileID: 3788710202821652051}
   - component: {fileID: 4653756120046412594}
-  - component: {fileID: 1882245257223061396}
   m_Layer: 9
   m_Name: Water Spot 1
   m_TagString: Pool
@@ -1451,7 +1437,7 @@ Transform:
   m_GameObject: {fileID: 8644310060628573381}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.5, y: 0.2, z: 15}
-  m_LocalScale: {x: 5, y: 0.1, z: 20}
+  m_LocalScale: {x: 5, y: 0.1, z: 10}
   m_Children:
   - {fileID: 6219831295692092366}
   - {fileID: 1333062908698745491}
@@ -1521,18 +1507,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 64.623955, z: 1}
   m_Center: {x: 0, y: 31.811977, z: 0}
---- !u!114 &1882245257223061396
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8644310060628573381}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5494ee8b71499ed42a59e125976a9674, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &442367595577925720
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3722,6 +3696,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Water (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8792698527795252144, guid: 01c8ec5a38f82b44197741115342a52a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 8792698527795252148, guid: 01c8ec5a38f82b44197741115342a52a,
         type: 3}
