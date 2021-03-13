@@ -13,10 +13,8 @@ public class KaanController : MonoBehaviour
             Debug.Log("girdi");
             playerStats = gameObject.GetComponent<PlayerStats>();
 
-            //animator = gameObject.GetComponent<Animator>();
-            //animator.SetTrigger("down");
-
-            GetComponent<SalihPlayerController>().MoveDown();
+            animator = gameObject.GetComponent<Animator>();
+            animator.SetTrigger("down");
         }
     }
     private void OnTriggerStay(Collider other){
@@ -30,9 +28,7 @@ public class KaanController : MonoBehaviour
         if (other.CompareTag("Pool"))
         {
             Debug.Log("çıktı");
-
-            GetComponent<SalihPlayerController>().MoveUp();
-            //animator.SetTrigger("up");
+            animator.SetTrigger("up");
         }
     }
 }

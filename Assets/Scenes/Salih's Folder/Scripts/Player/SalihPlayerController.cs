@@ -3,20 +3,20 @@ using System.Collections;
 using UnityEngine;
 public class SalihPlayerController : MonoBehaviour
 {
-    ////KAAAN
-    //public static float _z;
+    //KAAAN
+    public static float _z;
 
 
-    // void FixedUpdate(){
-    //     _z=transform.position.z;
-    //    transform.Translate(Vector3.forward*Time.deltaTime*6);
-    //}
+     void FixedUpdate(){
+         _z=transform.position.z;
+        transform.Translate(Vector3.forward*Time.deltaTime*6);
+    }
 
-    //public static float GetZ()
-    //{
-    //    return SalihPlayerController._z;
-    //}
-    ////KAAAN
+    public static float GetZ()
+    {
+        return SalihPlayerController._z;
+    }
+    //KAAAN
 
     #region Event System
     private void OnEnable()
@@ -88,33 +88,33 @@ public class SalihPlayerController : MonoBehaviour
     {
         Debug.Log("Swiped To Up");
 
-        Vector3 newPos = new Vector3(
-            transform.position.x,
-            Mathf.Clamp(maxYOrdinate, minYOrdinate, maxYOrdinate),
-            transform.position.z);
+        //Vector3 newPos = new Vector3(
+        //    transform.position.x,
+        //    Mathf.Clamp(maxYOrdinate, minYOrdinate, maxYOrdinate),
+        //    transform.position.z);
 
-        Vector3 newRot = new Vector3(
-            -VerticalRotation,
-            transform.rotation.y,
-            transform.rotation.z);
+        //Vector3 newRot = new Vector3(
+        //    -VerticalRotation,
+        //    transform.rotation.y,
+        //    transform.rotation.z);
 
-        StartCoroutine(DoMove(newPos, newRot));
+        //StartCoroutine(DoMove(newPos, newRot));
     }
     public void MoveDown()
     {
         Debug.Log("Swiped To Down");
 
-        Vector3 newPos = new Vector3(
-                    transform.position.x,
-                    Mathf.Clamp(minYOrdinate, minYOrdinate, maxYOrdinate),
-                    transform.position.z);
+        //Vector3 newPos = new Vector3(
+        //            transform.position.x,
+        //            Mathf.Clamp(minYOrdinate, minYOrdinate, maxYOrdinate),
+        //            transform.position.z);
 
-        Vector3 newRot = new Vector3(
-            VerticalRotation,
-            transform.rotation.y,
-            transform.rotation.z);
+        //Vector3 newRot = new Vector3(
+        //    VerticalRotation,
+        //    transform.rotation.y,
+        //    transform.rotation.z);
 
-        StartCoroutine(DoMove(newPos, newRot));
+        //StartCoroutine(DoMove(newPos, newRot));
     }
 
     IEnumerator DoMove(Vector3 newPosition, Vector3 newRotation)

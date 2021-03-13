@@ -16,7 +16,7 @@ public class CameraFollow : MonoBehaviour
         }
         else
         {
-            //_cameraZ = SalihPlayerController.GetZ() - 10.0f;
+            _cameraZ = SalihPlayerController.GetZ() - 10.0f;
         }
 
         transform.position = new Vector3(0, 10f, _cameraZ);
