@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
-    double waterSize = 0;
+    float waterSize = 0;
 
 
     public void addWater(){
-        waterSize+=0.2;
+        waterSize += 0.2f;
         Debug.Log(waterSize);
     }
     
