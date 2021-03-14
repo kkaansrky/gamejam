@@ -34,8 +34,6 @@ public class PlayerMovement : MonoBehaviour
 
     #endregion
 
-   
-
     #region Methods
     public void MoveRight()
     {

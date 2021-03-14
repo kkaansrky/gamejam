@@ -11,9 +11,16 @@ public class LevelInfoAsset : ScriptableObject
 [System.Serializable]
 public struct LevelInfo
 {
+    [Header("Platform Size At That Level")]
     public int platformSize;
-    public GameObject platform1;
-    public GameObject platform2;
-    public GameObject plarform3;
+    [Header("Created Platform Prefabs"), Space(20)]
+    public List<GameObject> platformList;
 
+    [Space(10)]
+    public bool spawnEndPlatform;
+    public GameObject endPlatform;
+
+    [Header("Offset Values Of Platforms"), Space(20)]
+    public float basicPlatformLength;
+    public float endPlatformLength;
 }

@@ -55,6 +55,7 @@ public class LevelManager : MonoBehaviour
 
     void CreateNextLevel()
     {
-        groundsList = GroundManager.Instance.ManagePlatform();
+        LevelInfo currentLevel = levelInfoAsset.levelInfos[currentLevelIndex-1];
+        groundsList = GroundManager.Instance.SpawnPlatform(currentLevel);
     }
 }

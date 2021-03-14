@@ -479,11 +479,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb8d69bd81dc65b4aa70837cbf2e14a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zOffSet: 82.5
-  Platforms:
-  - {fileID: 442367596037366952, guid: eb7f702a83c79f34bb9e65442679c26d, type: 3}
-  - {fileID: 442367596037366952, guid: 8480449196bf3af4692096273c24bcf2, type: 3}
-  - {fileID: 442367596037366952, guid: 32b7ec4bb6605b0479d82ddc6348c592, type: 3}
   environment: {fileID: 216573449}
 --- !u!4 &821828561
 Transform:
@@ -587,7 +582,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 909942594}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5494ee8b71499ed42a59e125976a9674, type: 3}
+  m_Script: {fileID: 11500000, guid: 095b10c186ec033489155560189b85ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1301392864
@@ -616,7 +611,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1301392864}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5970094b2441c324f97a4176c5dd72e0, type: 3}
+  m_Script: {fileID: 11500000, guid: c8cd59279f475dc428c45576a91b44c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   levelInfoAsset: {fileID: 11400000, guid: 55f010dea1b8f7e479f4699dcca806ea, type: 2}

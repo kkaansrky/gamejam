@@ -4,23 +4,12 @@ using UnityEngine;
 
 public class GroundManager : MonoBehaviour
 {
-    
-
-    [Space, SerializeField]
-    private float zOffSet;
-
-    [Space, SerializeField]
-    private List<GameObject> Platforms;
+    public static GroundManager Instance => instance;
 
     [Space, SerializeField]
     private Transform environment;
 
     private static GroundManager instance;
-    public static GroundManager Instance => instance;
-
-    private Vector3 targetPos = Vector3.zero;
-
-
     private void Awake()
     {
         if (instance == null)
@@ -33,44 +22,52 @@ public class GroundManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
-    public List<GameObject> ManagePlatform()
+    public List<GameObject> SpawnPlatform(LevelInfo _levelInfo)
     {
-        int platformCount = Platforms.Count;
-        int lastRandom = -1;
+        int platformSize = _levelInfo.platformSize;
+        List<GameObject> platforms = _levelInfo.platformList;
+        GameObject endPlatform = _levelInfo.endPlatform;
+        Vector3 targetPos = Vector3.zero;
+
         List<GameObject> returnList = new List<GameObject>();
-
-        for (int i = 0; i < platformCount-1; i++)
+        for (int i = 0; i < platformSize; i++)
         {
-            int randomPlatformIndex = Random.Range(0, platformCount - 1);
+            int randomPlatformIndex = Random.Range(0, platforms.Count);
 
-            //2 defa aynı yolu spawn etmesin diye
-            if (randomPlatformIndex != lastRandom)
-            {
-                GameObject tempPlatform = SpawnPlatform(randomPlatformIndex);
-                returnList.Add(tempPlatform);
-                lastRandom = randomPlatformIndex;
-            }
-            else
-            {
-                i--;
-            }
+            GameObject platform = Instantiate(
+                platforms[randomPlatformIndex],
+                targetPos,
+                Quaternion.identity);
 
+            platform.transform.SetParent(environment);
+            platform.name = $"Platform {i+1}";
+            returnList.Add(platform);
+
+            if (i != platformSize - 1)
+            {
+                targetPos = new Vector3(
+                    targetPos.x, 
+                    targetPos.y, 
+                    targetPos.z + _levelInfo.basicPlatformLength);
+            }
         }
 
-        int endPlatformIndex = platformCount -1 ;
-        GameObject temp2 = SpawnPlatform(endPlatformIndex);
-        returnList.Add(temp2);
+        if (_levelInfo.spawnEndPlatform)
+        {
+            targetPos = new Vector3(
+                targetPos.x, 
+                targetPos.y, 
+                targetPos.z + _levelInfo.endPlatformLength);
 
+            GameObject lastPlatform = Instantiate(
+                endPlatform,
+                targetPos,
+                Quaternion.identity);
+
+            lastPlatform.transform.SetParent(environment);
+            lastPlatform.name = "END PLATFORM";
+            returnList.Add(lastPlatform);
+        }
         return returnList;
-    }
-
-    public GameObject SpawnPlatform(int index)
-    {
-        GameObject spawnPlatform = Instantiate(Platforms[index], targetPos, Quaternion.identity) as GameObject;
-        spawnPlatform.transform.SetParent(environment);
-        targetPos = new Vector3(targetPos.x, targetPos.y, targetPos.z + zOffSet);
-
-        return spawnPlatform;
     }
 }

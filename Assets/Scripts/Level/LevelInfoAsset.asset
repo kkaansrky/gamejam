@@ -14,23 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelInfos:
   - platformSize: 3
-    platform1: {fileID: 442367596037366952, guid: eb7f702a83c79f34bb9e65442679c26d,
+    platformList:
+    - {fileID: 442367596037366952, guid: d4533e549ee814444a1156a0b254bb02, type: 3}
+    - {fileID: 442367596037366952, guid: 8480449196bf3af4692096273c24bcf2, type: 3}
+    spawnEndPlatform: 1
+    endPlatform: {fileID: 442367596037366952, guid: 32b7ec4bb6605b0479d82ddc6348c592,
       type: 3}
-    platform2: {fileID: 442367596037366952, guid: 8480449196bf3af4692096273c24bcf2,
-      type: 3}
-    plarform3: {fileID: 442367596037366952, guid: 32b7ec4bb6605b0479d82ddc6348c592,
-      type: 3}
-  - platformSize: 3
-    platform1: {fileID: 442367596037366952, guid: 8480449196bf3af4692096273c24bcf2,
-      type: 3}
-    platform2: {fileID: 442367596037366952, guid: 8480449196bf3af4692096273c24bcf2,
-      type: 3}
-    plarform3: {fileID: 442367596037366952, guid: 32b7ec4bb6605b0479d82ddc6348c592,
-      type: 3}
-  - platformSize: 3
-    platform1: {fileID: 442367596037366952, guid: eb7f702a83c79f34bb9e65442679c26d,
-      type: 3}
-    platform2: {fileID: 442367596037366952, guid: eb7f702a83c79f34bb9e65442679c26d,
-      type: 3}
-    plarform3: {fileID: 442367596037366952, guid: 32b7ec4bb6605b0479d82ddc6348c592,
-      type: 3}
+    basicPlatformLength: 82.5
+    endPlatformLength: 82.5
