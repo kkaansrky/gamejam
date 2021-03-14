@@ -42,21 +42,27 @@ public class SalihGroundManager : MonoBehaviour
         int lastRandom = -1;
         List<GameObject> returnList = new List<GameObject>();
 
-        for (int i = 1; i <= platformCount-1; i++)
+        for (int i = 1; i <= platformCount - 1; i++)
         {
             int randomPlatformIndex = RandomIndex();
-            if(randomPlatformIndex != lastRandom){
-                GameObject temp =SpawnPlatforms(randomPlatformIndex);
+
+            //2 defa aynı yolu spawn etmesin diye
+            if (randomPlatformIndex != lastRandom)
+            {
+                GameObject temp = SpawnPlatforms(randomPlatformIndex);
                 returnList.Add(temp);
-                lastRandom=randomPlatformIndex;
-            }else{
+                lastRandom = randomPlatformIndex;
+            }
+            else
+            {
                 platformCount++;
             }
-            
-        }
-        //son platform oluşturma
 
-        GameObject temp2 = SpawnPlatforms(2);
+        }
+
+        //son platform oluşturma
+        //son index her zaman end platform olmak zorunda
+        GameObject temp2 = SpawnPlatforms(platformCount - 1);
         returnList.Add(temp2);
 
         return returnList;
@@ -64,13 +70,14 @@ public class SalihGroundManager : MonoBehaviour
 
     public int RandomIndex()
     {
-        int i = Random.Range(0, Platforms.Count-1);
+        int i = Random.Range(0, Platforms.Count - 1);
 
         return i;
     }
 
-    public GameObject SpawnPlatforms(int index){
-        GameObject endP = Instantiate(Platforms[index] ,targetPos, Quaternion.identity) as GameObject;
+    public GameObject SpawnPlatforms(int index)
+    {
+        GameObject endP = Instantiate(Platforms[index], targetPos, Quaternion.identity) as GameObject;
         endP.transform.SetParent(environment);
         targetPos = new Vector3(targetPos.x, targetPos.y, targetPos.z + zOffSet);
 

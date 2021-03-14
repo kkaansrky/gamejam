@@ -37,7 +37,7 @@ public class SalihLevelManager : MonoBehaviour
         {
             for (int i = 0; i < groundsList.Count; i++)
             {
-                Destroy(groundsList[i]);     
+                Destroy(groundsList[i]);
             }
         }
 
@@ -53,6 +53,6 @@ public class SalihLevelManager : MonoBehaviour
 
     void CreateNextLevel()
     {
-        SalihGroundManager.Instance.SpawnPlatforms();
+        groundsList = SalihGroundManager.Instance.SpawnPlatforms();
     }
 }
