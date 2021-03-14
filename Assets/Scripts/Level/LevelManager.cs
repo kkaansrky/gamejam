@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
 public class LevelManager : MonoBehaviour
 {
@@ -13,6 +15,8 @@ public class LevelManager : MonoBehaviour
     private static LevelManager instance;
 
     int currentLevelIndex = 0;
+
+    List<GameObject> groundsList = new List<GameObject>();
 
     private void Awake()
     {
@@ -29,10 +33,20 @@ public class LevelManager : MonoBehaviour
 
     public bool HandleCreateNextLevel()
     {
+        if (groundsList.Count > 0)
+        {
+            for (int i = 0; i < groundsList.Count; i++)
+            {
+                Destroy(groundsList[i]);
+            }
+        }
+
         ++currentLevelIndex;
 
         if (levelInfoAsset.levelInfos.Count >= currentLevelIndex)
         {
+            //Bahar temizliği
+            groundsList.Clear();
             CreateNextLevel();
             return true;
         }
@@ -41,6 +55,6 @@ public class LevelManager : MonoBehaviour
 
     void CreateNextLevel()
     {
-        GroundManager.Instance.SpawnPlatforms();
+        groundsList = GroundManager.Instance.ManagePlatform();
     }
 }

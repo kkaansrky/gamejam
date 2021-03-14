@@ -1,22 +1,8 @@
 using DG.Tweening;
 using System.Collections;
 using UnityEngine;
-public class SalihPlayerController : MonoBehaviour
+public class PlayerMovement : MonoBehaviour
 {
-    ////KAAAN
-    //public static float _z;
-
-
-    // void FixedUpdate(){
-    //     _z=transform.position.z;
-    //    transform.Translate(Vector3.forward*Time.deltaTime*6);
-    //}
-
-    //public static float GetZ()
-    //{
-    //    return SalihPlayerController._z;
-    //}
-    ////KAAAN
 
     #region Event System
     private void OnEnable()

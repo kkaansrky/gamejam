@@ -11,6 +11,9 @@ public class LevelInfoAsset : ScriptableObject
 [System.Serializable]
 public struct LevelInfo
 {
-    public GameObject baseObj;
+    public int platformSize;
+    public GameObject platform1;
+    public GameObject platform2;
+    public GameObject plarform3;
 
 }
