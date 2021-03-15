@@ -19,12 +19,27 @@ public class PlayerMovement : MonoBehaviour
         SwipeInput.swUp -= MoveUp;
         SwipeInput.swDown -= MoveDown;
     }
+
+    private void FixedUpdate()
+    {
+        if (isGameEnd)
+        {
+            transform.Translate(Vector3.forward * Time.deltaTime * 6);
+        }
+    }
+
+    public void setIsGameEnd()
+    {
+        isGameEnd = true;
+    }
     #endregion
 
     #region Variables
 
     [Space, SerializeField]
     private float moveDuration;
+
+    private bool isGameEnd = false;
 
     [Space, SerializeField]
     private float xAxisPos, minYOrdinate, maxYOrdinate;
@@ -40,10 +55,10 @@ public class PlayerMovement : MonoBehaviour
         Debug.Log("Swiped To Right");
 
         Vector3 newPos = new Vector3(
-            Mathf.Clamp(xAxisPos, -xAxisPos, xAxisPos), 
-            transform.position.y, 
+            Mathf.Clamp(xAxisPos, -xAxisPos, xAxisPos),
+            transform.position.y,
             transform.position.z);
-        transform.Translate(Vector3.forward*Time.deltaTime*6);
+        transform.Translate(Vector3.forward * Time.deltaTime * 6);
 
         Vector3 newRot = new Vector3(
             transform.rotation.x,
@@ -58,7 +73,7 @@ public class PlayerMovement : MonoBehaviour
 
         Vector3 newPos = new Vector3(
             Mathf.Clamp(-xAxisPos, -xAxisPos, xAxisPos),
-            transform.position.y, 
+            transform.position.y,
             transform.position.z);
 
         Vector3 newRot = new Vector3(
