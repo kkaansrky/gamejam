@@ -8,7 +8,13 @@ public class EndPlatformController : MonoBehaviour
     [Space, SerializeField]
     GameObject endPlatform;
 
+    [Space, SerializeField]
+    ParticleSystem smoke;
+
+    [Space, SerializeField]
+    ParticleSystem fire ;
     Collider player ;
+
 
     private void OnTriggerEnter(Collider other)
     {
@@ -19,6 +25,9 @@ public class EndPlatformController : MonoBehaviour
         GameObject environment = endPlatform.transform.parent.gameObject;
         Rigidbody rigidbody = environment.GetComponent<Rigidbody>();
         rigidbody.constraints = RigidbodyConstraints.FreezePositionZ;
+
+        
+        
 
         CheckWater();
     }
@@ -34,6 +43,8 @@ public class EndPlatformController : MonoBehaviour
         else 
         {
             Debug.Log("Kazandın");
+            fire.Stop();
+            smoke.Play();
         }
     }
 }
