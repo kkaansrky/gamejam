@@ -44,6 +44,7 @@ public class SwipeInput : MonoBehaviour
                     break;
 
                 case SwipeState.Right:
+                    Debug.Log("Swipe right detected");
                     if (swRight != null)
                         swRight();
                     break;
