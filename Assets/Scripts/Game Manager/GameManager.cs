@@ -32,11 +32,17 @@ public class GameManager : MonoBehaviour
         }
 
         LevelManager.Instance.LevelCompleted += OnLevelCompleted;
+        LevelManager.Instance.LevelFailed += OnLevelFailed;
     }
 
     void OnLevelCompleted()
     {
         Debug.Log("Current Level Completed!");
         LevelManager.Instance.HandleCreateNextLevel();
+    }
+    void OnLevelFailed()
+    {
+        Debug.Log("Current Level Completed!");
+        LevelManager.Instance.HandleLevelFailed();
     }
 }

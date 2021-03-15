@@ -58,84 +58,67 @@ public class PlayerMovement : MonoBehaviour
 
     public void MoveRight()
     {
-        Debug.Log("Swiped To Right");
-
-        Vector3 newPos = new Vector3(
-            Mathf.Clamp(xAxisPos, -xAxisPos, xAxisPos),
-            transform.position.y,
-            transform.position.z);
-        transform.Translate(Vector3.forward * Time.deltaTime * 6);
-
         Vector3 newRot = new Vector3(
             transform.rotation.x,
             transform.rotation.y,
             -HorizontalRotation);
 
-        StartCoroutine(DoMove(newPos, newRot));
+        StartCoroutine(XSwipeMovements(newRot, xAxisPos));
     }
     public void MoveLeft()
     {
-        Debug.Log("Swiped To Left");
-
-        Vector3 newPos = new Vector3(
-            Mathf.Clamp(-xAxisPos, -xAxisPos, xAxisPos),
-            transform.position.y,
-            transform.position.z);
-
         Vector3 newRot = new Vector3(
             transform.rotation.x,
             transform.rotation.y,
             HorizontalRotation);
 
-        StartCoroutine(DoMove(newPos, newRot));
+        StartCoroutine(XSwipeMovements(newRot, -xAxisPos));
     }
     public void MoveUp()
     {
-        Debug.Log("Swiped To Up");
-
-        Vector3 newPos = new Vector3(
-            transform.position.x,
-            Mathf.Clamp(maxYOrdinate, minYOrdinate, maxYOrdinate),
-            transform.position.z);
-
         Vector3 newRot = new Vector3(
             -VerticalRotation,
             transform.rotation.y,
             transform.rotation.z);
 
-        StartCoroutine(DoMove(newPos, newRot));
+        StartCoroutine(YSwipeMovements(newRot, maxYOrdinate));
     }
     public void MoveDown()
     {
-        Debug.Log("Swiped To Down");
-
-        Vector3 newPos = new Vector3(
-                    transform.position.x,
-                    Mathf.Clamp(minYOrdinate, minYOrdinate, maxYOrdinate),
-                    transform.position.z);
-
         Vector3 newRot = new Vector3(
             VerticalRotation,
             transform.rotation.y,
             transform.rotation.z);
 
-        StartCoroutine(DoMove(newPos, newRot));
+        StartCoroutine(YSwipeMovements(newRot, minYOrdinate));
     }
-
-    IEnumerator DoMove(Vector3 newPosition, Vector3 newRotation)
+    IEnumerator MoveOnXAxis(float x)
+    {
+        transform.DOMoveX(x, moveDuration).SetEase(moveEase);
+        yield return new WaitForSeconds(moveDuration);
+    }
+    IEnumerator MoveOnYOrdinate(float y)
+    {
+        transform.DOMoveY(y, moveDuration).SetEase(moveEase);
+        yield return new WaitForSeconds(moveDuration);
+    }
+    IEnumerator XSwipeMovements(Vector3 newRotation, float xAxis)
     {
         if (!isGameEnd)
         {
             transform.DORotate(newRotation, .1f);
-            yield return StartCoroutine(MoveThePlayer(newPosition));
+            yield return StartCoroutine(MoveOnXAxis(xAxis));
             transform.DORotate(Vector3.zero, .1f);
         }
     }
-
-    IEnumerator MoveThePlayer(Vector3 newPosition)
+    IEnumerator YSwipeMovements(Vector3 newRotation, float yOrdinate)
     {
-        transform.DOMove(newPosition, moveDuration).SetEase(moveEase);
-        yield return new WaitForSeconds(moveDuration);
+        if (!isGameEnd)
+        {
+            transform.DORotate(newRotation, .1f);
+            yield return StartCoroutine(MoveOnYOrdinate(yOrdinate));
+            transform.DORotate(Vector3.zero, .1f);
+        }
     }
     #endregion
 

@@ -7,8 +7,6 @@ public class GroundMovement : MonoBehaviour
     public float velocity;
     Rigidbody rb;
 
-    private bool isGameCont = true;
-
     private void Start()
     {
         rb = GetComponent<Rigidbody>();

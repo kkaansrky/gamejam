@@ -19,7 +19,7 @@ public class RestartButton : Button
         onClick.RemoveListener(RestartLevel);
     }
 
-    void RestartLevel()
+    public void RestartLevel()
     {
         LevelManager.Instance.RestartLevel();
         EventManager.OnLevelStart.Invoke();

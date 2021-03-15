@@ -7,9 +7,10 @@ public class LevelManager : MonoBehaviour
     public static LevelManager Instance => instance;
 
     public System.Action LevelCompleted;
+    public System.Action LevelFailed;
 
-    [Space]
-    [SerializeField] LevelInfoAsset levelInfoAsset;
+    [Space,SerializeField] 
+    LevelInfoAsset levelInfoAsset;
 
 
     private static LevelManager instance;
@@ -61,6 +62,26 @@ public class LevelManager : MonoBehaviour
 
     public void RestartLevel()
     {
-        SceneManager.LoadScene(currentLevelIndex);
+        LevelFailed?.Invoke();
+    }
+
+    public bool HandleLevelFailed()
+    {
+        if (groundsList.Count > 0)
+        {
+            for (int i = 0; i < groundsList.Count; i++)
+            {
+                Destroy(groundsList[i]);
+            }
+        }
+
+        if (levelInfoAsset.levelInfos.Count >= currentLevelIndex)
+        {
+            //Bahar temizliği
+            groundsList.Clear();
+            CreateNextLevel();
+            return true;
+        }
+        return false;
     }
 }
