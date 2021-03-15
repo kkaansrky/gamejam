@@ -16,7 +16,7 @@ public class GroundMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.velocity = -Vector3.forward * velocity;
+        rb.velocity = Vector3.back * velocity;
     }
 
 
