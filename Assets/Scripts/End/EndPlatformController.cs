@@ -20,14 +20,11 @@ public class EndPlatformController : MonoBehaviour
     {
         player = other;
         PlayerMovement playerMovement = other.GetComponent<PlayerMovement>();
-        playerMovement.setIsGameEnd();
+        playerMovement.setIsGameEnd(true);
 
         GameObject environment = endPlatform.transform.parent.gameObject;
         Rigidbody rigidbody = environment.GetComponent<Rigidbody>();
         rigidbody.constraints = RigidbodyConstraints.FreezePositionZ;
-
-        
-        
 
         CheckWater();
     }

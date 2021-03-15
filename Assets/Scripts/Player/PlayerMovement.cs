@@ -50,9 +50,9 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    public void setIsGameEnd()
+    public void setIsGameEnd(bool flag)
     {
-        isGameEnd = true;
+        isGameEnd = flag;
         transform.DOMove(new Vector3(0f, transform.position.y, transform.position.z+2), .3f);
     }
 
