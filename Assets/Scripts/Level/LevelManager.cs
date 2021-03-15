@@ -9,9 +9,14 @@ public class LevelManager : MonoBehaviour
     public System.Action LevelCompleted;
     public System.Action LevelFailed;
 
-    [Space,SerializeField] 
+    [Space, SerializeField]
     LevelInfoAsset levelInfoAsset;
 
+    [Space, SerializeField]
+    GameObject player;
+
+    [Space, SerializeField]
+    GameObject environment;
 
     private static LevelManager instance;
 
@@ -56,13 +61,9 @@ public class LevelManager : MonoBehaviour
 
     void CreateNextLevel()
     {
-        LevelInfo currentLevel = levelInfoAsset.levelInfos[currentLevelIndex-1];
+        LevelInfo currentLevel = levelInfoAsset.levelInfos[currentLevelIndex - 1];
         groundsList = GroundManager.Instance.SpawnPlatform(currentLevel);
-    }
-
-    public void RestartLevel()
-    {
-        LevelFailed?.Invoke();
+        startAtLevel();
     }
 
     public bool HandleLevelFailed()
@@ -84,4 +85,24 @@ public class LevelManager : MonoBehaviour
         }
         return false;
     }
+
+    public void RestartLevel()
+    {
+        LevelFailed?.Invoke();
+        startAtLevel();
+    }
+
+    public void startAtLevel()
+    {
+        player.GetComponent<PlayerMovement>().setIsGameEnd(false);
+        player.transform.position = new Vector3(0, 4, 0);
+
+        Rigidbody rigidbody = environment.GetComponent<Rigidbody>();
+        rigidbody.constraints = RigidbodyConstraints.None;
+
+        player.GetComponent<PlayerStats>().startWater();
+
+    }
+
+
 }

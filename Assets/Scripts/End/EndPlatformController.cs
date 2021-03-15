@@ -12,8 +12,8 @@ public class EndPlatformController : MonoBehaviour
     ParticleSystem smoke;
 
     [Space, SerializeField]
-    ParticleSystem fire ;
-    Collider player ;
+    ParticleSystem fire;
+    Collider player;
 
 
     private void OnTriggerEnter(Collider other)
@@ -29,15 +29,16 @@ public class EndPlatformController : MonoBehaviour
         CheckWater();
     }
 
-    private void CheckWater(){
+    private void CheckWater()
+    {
         PlayerStats playerStats = player.GetComponent<PlayerStats>();
         double water = playerStats.getWater();
 
-        if(water < 50)
+        if (water < 50)
         {
             EventManager.OnLevelFail.Invoke();
         }
-        else 
+        else
         {
             EventManager.OnLevelFinish.Invoke();
             fire.Stop();

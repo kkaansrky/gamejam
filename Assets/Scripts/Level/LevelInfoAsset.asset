@@ -22,3 +22,84 @@ MonoBehaviour:
       type: 3}
     basicPlatformLength: 82.5
     endPlatformLength: 82.5
+  - platformSize: 3
+    platformList:
+    - {fileID: 442367596037366952, guid: 665581ff23dcc214aacc5d7fb6d120f0, type: 3}
+    - {fileID: 442367596037366952, guid: a6dae65b253570845ba33d400a67f4e0, type: 3}
+    spawnEndPlatform: 1
+    endPlatform: {fileID: 442367596037366952, guid: 32b7ec4bb6605b0479d82ddc6348c592,
+      type: 3}
+    basicPlatformLength: 82.5
+    endPlatformLength: 82.5
+  - platformSize: 3
+    platformList:
+    - {fileID: 442367596037366952, guid: 665581ff23dcc214aacc5d7fb6d120f0, type: 3}
+    - {fileID: 442367596037366952, guid: a6dae65b253570845ba33d400a67f4e0, type: 3}
+    spawnEndPlatform: 1
+    endPlatform: {fileID: 442367596037366952, guid: 32b7ec4bb6605b0479d82ddc6348c592,
+      type: 3}
+    basicPlatformLength: 82.5
+    endPlatformLength: 82.5
+  - platformSize: 3
+    platformList:
+    - {fileID: 442367596037366952, guid: 665581ff23dcc214aacc5d7fb6d120f0, type: 3}
+    - {fileID: 442367596037366952, guid: a6dae65b253570845ba33d400a67f4e0, type: 3}
+    spawnEndPlatform: 1
+    endPlatform: {fileID: 442367596037366952, guid: 32b7ec4bb6605b0479d82ddc6348c592,
+      type: 3}
+    basicPlatformLength: 82.5
+    endPlatformLength: 82.5
+  - platformSize: 3
+    platformList:
+    - {fileID: 442367596037366952, guid: 665581ff23dcc214aacc5d7fb6d120f0, type: 3}
+    - {fileID: 442367596037366952, guid: a6dae65b253570845ba33d400a67f4e0, type: 3}
+    spawnEndPlatform: 1
+    endPlatform: {fileID: 442367596037366952, guid: 32b7ec4bb6605b0479d82ddc6348c592,
+      type: 3}
+    basicPlatformLength: 82.5
+    endPlatformLength: 82.5
+  - platformSize: 3
+    platformList:
+    - {fileID: 442367596037366952, guid: 665581ff23dcc214aacc5d7fb6d120f0, type: 3}
+    - {fileID: 442367596037366952, guid: a6dae65b253570845ba33d400a67f4e0, type: 3}
+    spawnEndPlatform: 1
+    endPlatform: {fileID: 442367596037366952, guid: 32b7ec4bb6605b0479d82ddc6348c592,
+      type: 3}
+    basicPlatformLength: 82.5
+    endPlatformLength: 82.5
+  - platformSize: 3
+    platformList:
+    - {fileID: 442367596037366952, guid: 665581ff23dcc214aacc5d7fb6d120f0, type: 3}
+    - {fileID: 442367596037366952, guid: a6dae65b253570845ba33d400a67f4e0, type: 3}
+    spawnEndPlatform: 1
+    endPlatform: {fileID: 442367596037366952, guid: 32b7ec4bb6605b0479d82ddc6348c592,
+      type: 3}
+    basicPlatformLength: 82.5
+    endPlatformLength: 82.5
+  - platformSize: 3
+    platformList:
+    - {fileID: 442367596037366952, guid: 665581ff23dcc214aacc5d7fb6d120f0, type: 3}
+    - {fileID: 442367596037366952, guid: a6dae65b253570845ba33d400a67f4e0, type: 3}
+    spawnEndPlatform: 1
+    endPlatform: {fileID: 442367596037366952, guid: 32b7ec4bb6605b0479d82ddc6348c592,
+      type: 3}
+    basicPlatformLength: 82.5
+    endPlatformLength: 82.5
+  - platformSize: 3
+    platformList:
+    - {fileID: 442367596037366952, guid: 665581ff23dcc214aacc5d7fb6d120f0, type: 3}
+    - {fileID: 442367596037366952, guid: a6dae65b253570845ba33d400a67f4e0, type: 3}
+    spawnEndPlatform: 1
+    endPlatform: {fileID: 442367596037366952, guid: 32b7ec4bb6605b0479d82ddc6348c592,
+      type: 3}
+    basicPlatformLength: 82.5
+    endPlatformLength: 82.5
+  - platformSize: 3
+    platformList:
+    - {fileID: 442367596037366952, guid: 665581ff23dcc214aacc5d7fb6d120f0, type: 3}
+    - {fileID: 442367596037366952, guid: a6dae65b253570845ba33d400a67f4e0, type: 3}
+    spawnEndPlatform: 1
+    endPlatform: {fileID: 442367596037366952, guid: 32b7ec4bb6605b0479d82ddc6348c592,
+      type: 3}
+    basicPlatformLength: 82.5
+    endPlatformLength: 82.5

@@ -20,7 +20,7 @@ public class PlayerMovement : MonoBehaviour
         SwipeInput.swDown -= MoveDown;
     }
 
-    
+
     #endregion
 
     #region Variables
@@ -53,7 +53,10 @@ public class PlayerMovement : MonoBehaviour
     public void setIsGameEnd(bool flag)
     {
         isGameEnd = flag;
-        transform.DOMove(new Vector3(0f, transform.position.y, transform.position.z+2), .3f);
+        if (isGameEnd)
+        {
+            transform.DOMove(new Vector3(0f, transform.position.y, transform.position.z + 2), .3f);
+        }
     }
 
     public void MoveRight()
