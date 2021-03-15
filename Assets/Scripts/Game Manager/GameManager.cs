@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
     {
         if (LevelManager.Instance.HandleCreateNextLevel())
         {
-            Debug.Log("Created New Level!");
+            EventManager.OnLevelStart.Invoke();
         }
         else
         {

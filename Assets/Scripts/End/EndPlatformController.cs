@@ -38,11 +38,11 @@ public class EndPlatformController : MonoBehaviour
 
         if(water < 50)
         {
-            Debug.Log("Kaybettin");
+            EventManager.OnLevelFail.Invoke();
         }
         else 
         {
-            Debug.Log("Kazandın");
+            EventManager.OnLevelFinish.Invoke();
             fire.Stop();
             smoke.Play();
         }
