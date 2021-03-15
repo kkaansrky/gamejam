@@ -20,7 +20,18 @@ public class PlayerMovement : MonoBehaviour
         SwipeInput.swDown -= MoveDown;
     }
 
-    
+    private void FixedUpdate()
+    {
+        if (isGameEnd)
+        {
+            transform.Translate(Vector3.forward * Time.deltaTime * 6);
+        }
+    }
+
+    public void setIsGameEnd()
+    {
+        isGameEnd = true;
+    }
     #endregion
 
     #region Variables
@@ -36,26 +47,9 @@ public class PlayerMovement : MonoBehaviour
     [Space, SerializeField]
     private float HorizontalRotation, VerticalRotation;
 
-    [Space, SerializeField]
-    private Ease moveEase = Ease.Linear;
-
     #endregion
 
     #region Methods
-    private void FixedUpdate()
-    {
-        if (isGameEnd)
-        {
-            transform.Translate(Vector3.forward * Time.deltaTime * 6);
-        }
-    }
-
-    public void setIsGameEnd()
-    {
-        isGameEnd = true;
-        transform.DOMove(new Vector3(0f, transform.position.y, transform.position.z+2), .3f);
-    }
-
     public void MoveRight()
     {
         Debug.Log("Swiped To Right");
@@ -124,17 +118,14 @@ public class PlayerMovement : MonoBehaviour
 
     IEnumerator DoMove(Vector3 newPosition, Vector3 newRotation)
     {
-        if (!isGameEnd)
-        {
-            transform.DORotate(newRotation, .1f);
-            yield return StartCoroutine(MoveThePlayer(newPosition));
-            transform.DORotate(Vector3.zero, .1f);
-        }
+        transform.DORotate(newRotation, .1f);
+        yield return StartCoroutine(MoveThePlayer(newPosition));
+        transform.DORotate(Vector3.zero, .1f);
     }
 
     IEnumerator MoveThePlayer(Vector3 newPosition)
     {
-        transform.DOMove(newPosition, moveDuration).SetEase(moveEase);
+        transform.DOMove(newPosition, moveDuration);
         yield return new WaitForSeconds(moveDuration);
     }
     #endregion
